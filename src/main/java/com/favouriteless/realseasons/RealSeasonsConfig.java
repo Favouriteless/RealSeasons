@@ -12,7 +12,7 @@ public class RealSeasonsConfig {
 
     public static final ForgeConfigSpec SPEC;
 
-    private static final ConfigValue<Integer> SECONDS_PER_SEASON;
+    public static final ConfigValue<Integer> SECONDS_PER_SEASON;
 
 
     static {
