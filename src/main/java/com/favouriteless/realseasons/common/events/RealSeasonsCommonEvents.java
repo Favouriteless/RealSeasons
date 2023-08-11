@@ -47,7 +47,7 @@ public class RealSeasonsCommonEvents {
 				startTime = cap.getSeasonStartTime();
 
 				long timeDiff = currentSeconds - startTime;
-				double secondsPerSubseason = RealSeasonsConfig.SECONDS_PER_SEASON.get() / (double)SubSeason.values().length;
+				double secondsPerSubseason = RealSeasonsConfig.SECONDS_PER_SEASON.get() / 3.0D;
 				double subseasonsSinceStart = timeDiff / secondsPerSubseason;
 
 				ISeasonState seasonState = SeasonHelper.getSeasonState(event.level);
