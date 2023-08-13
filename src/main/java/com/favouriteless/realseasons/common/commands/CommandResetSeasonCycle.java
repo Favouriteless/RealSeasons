@@ -28,11 +28,11 @@ public class CommandResetSeasonCycle {
 					cap.setStartingSeason(season);
 				});
 			}
-
-			cs.sendSuccess(() -> Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.GREEN), true);
+			
+			cs.sendSuccess(Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.GREEN), true);
 
 		} else {
-			cs.sendSuccess(() -> Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.RED), true);
+			cs.sendSuccess(Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.RED), true);
 		}
 		return 1;
 	}
