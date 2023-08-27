@@ -32,7 +32,7 @@ public class CommandResetSeasonCycle {
 			cs.sendSuccess(Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.GREEN), true);
 
 		} else {
-			cs.sendSuccess(Component.translatable("commands.realseasons.resetcycle.success").withStyle(ChatFormatting.RED), true);
+			cs.sendSuccess(Component.translatable("commands.realseasons.resetcycle.fail").withStyle(ChatFormatting.RED), true);
 		}
 		return 1;
 	}
