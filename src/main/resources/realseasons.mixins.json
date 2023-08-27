@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "realseasons.refmap.json",
   "mixins": [
+    "MixinSeasonHandler"
   ],
   "client": [
   ],
