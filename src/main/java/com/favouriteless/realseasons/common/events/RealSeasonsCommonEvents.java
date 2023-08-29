@@ -18,7 +18,6 @@ import sereneseasons.season.SeasonSavedData;
 
 import javax.annotation.Nonnull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
@@ -28,7 +27,7 @@ public class RealSeasonsCommonEvents {
 	@SubscribeEvent
 	public static void onLevelTick(LevelTickEvent event) {
 		if(!event.level.isClientSide) {
-			long currentSeconds = LocalDateTime.now().toEpochSecond(ZoneOffset.UTC);
+			long currentSeconds = OffsetDateTime.now().toEpochSecond();
 
 			event.level.getCapability(RealSeasons.SEASON_CYCLE_CAPABILITY).ifPresent(cap -> {
 				long startTime = cap.getSeasonStartTime();
