@@ -26,6 +26,7 @@ public class RealSeasonsCommands {
 	public static void onCommandsRegistered(RegisterCommandsEvent event) {
 		event.getDispatcher().register(
 				Commands.literal("resetSeasonCycle")
+						.requires(cs -> cs.hasPermission(3))
 						.then(Commands.argument("start_season", EnumArgument.enumArgument(SubSeason.class))
 								.executes(ctx -> resetCycle(ctx.getSource(), ctx.getSource().getLevel(), ctx.getArgument("start_season", SubSeason.class), true, LocalDateTime.now()))
 						.then(Commands.literal("utc")
