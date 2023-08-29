@@ -4,30 +4,25 @@ import com.favouriteless.realseasons.RealSeasons;
 import com.favouriteless.realseasons.RealSeasonsConfig;
 import com.favouriteless.realseasons.common.capabilities.SeasonCycleCapabilityProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.TickEvent.LevelTickEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent.PlayerChangedDimensionEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
-import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import sereneseasons.api.SSGameRules;
 import sereneseasons.api.season.ISeasonState;
 import sereneseasons.api.season.Season.SubSeason;
 import sereneseasons.api.season.SeasonHelper;
-import sereneseasons.config.ServerConfig;
 import sereneseasons.handler.season.SeasonHandler;
 import sereneseasons.season.SeasonSavedData;
-import sereneseasons.season.SeasonTime;
 
 import javax.annotation.Nonnull;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 
-@EventBusSubscriber(modid=RealSeasons.MODID, bus=Bus.FORGE)
+@EventBusSubscriber(modid=RealSeasons.MOD_ID, bus=Bus.FORGE)
 public class RealSeasonsCommonEvents {
 
 	@SubscribeEvent
@@ -39,7 +34,14 @@ public class RealSeasonsCommonEvents {
 				long startTime = cap.getSeasonStartTime();
 
 				if(startTime == -1) {
-					cap.setSeasonStartTime(currentSeconds);
+					long startSeconds;
+
+					if(RealSeasonsConfig.START_MIDNIGHT.get())
+						startSeconds = RealSeasonsConfig.START_UTC.get() ? LocalDate.now().atTime(0, 0).toEpochSecond(ZoneOffset.UTC) : LocalDate.now().atTime(0, 0).toEpochSecond(OffsetDateTime.now().getOffset());
+					else
+						startSeconds = currentSeconds;
+
+					cap.setSeasonStartTime(startSeconds);
 					cap.setStartingSeason(SubSeason.EARLY_SPRING);
 				}
 
@@ -72,7 +74,7 @@ public class RealSeasonsCommonEvents {
 		Level level = event.getObject();
 
 		if(!level.isClientSide)
-			event.addCapability(new ResourceLocation(RealSeasons.MODID, "season_cycle"), new SeasonCycleCapabilityProvider());
+			event.addCapability(new ResourceLocation(RealSeasons.MOD_ID, "season_cycle"), new SeasonCycleCapabilityProvider());
 	}
 
 }

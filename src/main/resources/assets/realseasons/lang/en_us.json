@@ -1,0 +1,7 @@
+{
+  "commands.realseasons.resetcycle.success": "Season cycle now starts with %s at %s.",
+  "commands.realseasons.resetcycle.fail_future": "Cannot set the start time to a time in the future or the server will crash.",
+  "commands.realseasons.resetcycle.fail": "Season cycle could not be set.",
+  "argument.realseasons.time.invalid": "Invalid time (must be in format HHmm such as 1900)",
+  "commands.realseasons.getinfo.success": "The current season cycle starts with %s at %s"
+}

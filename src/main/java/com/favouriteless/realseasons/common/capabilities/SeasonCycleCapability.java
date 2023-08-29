@@ -30,6 +30,11 @@ public class SeasonCycleCapability implements ISeasonCycleCapability {
 	}
 
 	@Override
+	public SubSeason getStartingSeason() {
+		return SubSeason.valueOf(startingSeason);
+	}
+
+	@Override
 	public CompoundTag serializeNBT() {
 		CompoundTag nbt = new CompoundTag();
 		nbt.putLong("startTime", seasonStartTime);
@@ -46,5 +51,7 @@ public class SeasonCycleCapability implements ISeasonCycleCapability {
 		if(startingSeason.equals(""))
 			startingSeason = SubSeason.EARLY_SPRING.name();
 	}
+
+
 
 }

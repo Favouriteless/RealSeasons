@@ -20,4 +20,6 @@ public interface ISeasonCycleCapability extends INBTSerializable<CompoundTag> {
 
 	int getStartingSeasonOffset();
 
+	SubSeason getStartingSeason();
+
 }
