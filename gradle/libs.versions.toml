@@ -1,6 +1,6 @@
 [versions]
-# Enchanted
-    real_seasons = "2.0.0"
+# Real Seasons
+    realseasons = "2.0.0"
 
 # Common
     forgeconfigapi = "21.1.1"

@@ -3,7 +3,7 @@ import com.diluv.schoomp.message.Message
 import com.diluv.schoomp.message.embed.Embed
 
 plugins {
-    id 'real_seasons-common'
+    id 'realseasons-common'
 
     alias libs.plugins.moddevgradle
 }
@@ -59,7 +59,7 @@ tasks.register("discord") {
             Message message = new Message()
             message.username = "Elaina"
             message.avatarUrl = "https://i.imgur.com/I455GSr.jpeg"
-            message.content = "Real Seasons ${libs.versions.real_seasons.get()} for Minecraft ${libs.versions.minecraft.asProvider().get()} has been published!"
+            message.content = "Real Seasons ${libs.versions.realseasons.get()} for Minecraft ${libs.versions.minecraft.asProvider().get()} has been published!"
 
 
             Embed embed = new Embed()

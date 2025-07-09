@@ -2,7 +2,7 @@ import net.darkhax.curseforgegradle.TaskPublishCurseForge
 import net.darkhax.curseforgegradle.UploadArtifact
 
 plugins {
-    id 'real_seasons-loader'
+    id 'realseasons-loader'
 
     alias libs.plugins.loom
     alias libs.plugins.minotaur
@@ -27,10 +27,10 @@ dependencies {
 }
 
 loom {
-    accessWidenerPath = project(':common').file("src/main/resources/real_seasons.accesswidener")
+    accessWidenerPath = project(':common').file("src/main/resources/realseasons.accesswidener")
 
     mixin {
-        defaultRefmapName.set("real_seasons.refmap.json")
+        defaultRefmapName.set("realseasons.refmap.json")
     }
 
     runs {
