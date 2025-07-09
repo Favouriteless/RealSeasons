@@ -45,7 +45,7 @@ public class SeasonHandlerMixin {
         RealSeasonsSavedData data = RealSeasonsSavedData.get(level);
 
         if(data.seasonStartTime == -1) { // If -1 this means RealSeasons hasn't been initialised yet.
-            data.seasonStartTime = currentSeconds;
+            data.seasonStartTime = LocalDate.now().atTime(0, 0).toEpochSecond(ZoneOffset.UTC);
             data.startingSeason = SubSeason.EARLY_SPRING;
             data.setDirty();
         }
