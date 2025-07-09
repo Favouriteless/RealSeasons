@@ -1,0 +1,27 @@
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+caches
+daemon
+wrapper
+native
+
+# gradle
+build
+.gradle
+logs
+
+# other
+run
+runs/
+key.properties
+Non-Mod Resources
+
+# allow gradlew
+!core/gradle/wrapper
+!core/gradlew.bat
+!gradle/wrapper
+!gradlew.bat

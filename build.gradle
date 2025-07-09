@@ -1,0 +1,20 @@
+plugins {
+    alias libs.plugins.minotaur apply false
+    alias libs.plugins.curseforgegradle apply false
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "Fuzs Mod Resources"
+            url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+        }
+
+        maven {
+            name = "Minecraft Forge"
+            url = "https://maven.minecraftforge.net"
+        }
+
+    }
+}

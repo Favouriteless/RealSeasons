@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "${neoforge_loader_version_range}"
+license = "All Rights Reserved"
+
+
+[[mods]]
+    modId = "real_seasons"
+    version = "${version}"
+    displayName = "Real Seasons"
+    displayURL= "https://github.com/Favouriteless/RealSeasons"
+    logoFile = "real_seasons.png"
+    logoBlur = false
+    authors = "Favouriteless"
+    description = '''A Serene Seasons addon to make the mod use real-time for changing seasons.'''
+
+[[mixins]]
+    config = "real_seasons.neoforge.mixins.json"
+
+[[mixins]]
+    config = "real_seasons.mixins.json"
+
+
+[[dependencies.real_seasons]]
+    modId = "neoforge"
+    type = "required" #mandatory
+    versionRange = "[${neoforge_version},)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.real_seasons]]
+    modId = "minecraft"
+    type = "required" #mandatory
+    versionRange = "${minecraft_version_range}"
+    ordering = "NONE"
+    side = "BOTH"

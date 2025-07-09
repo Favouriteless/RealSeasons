@@ -1,0 +1,38 @@
+{
+    "schemaVersion": 1,
+    "id": "real_seasons",
+    "version": "${version}",
+    "name": "Real Seasons",
+    "description": "A Serene Seasons addon to make the mod use real-time for changing seasons.",
+    "authors": [
+        "Favouriteless"
+    ],
+    "contact": {
+        "homepage": "https://github.com/Favouriteless/RealSeasons"
+    },
+    "license": "All Rights Reserved",
+    "icon": "real_seasons.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "net.favouriteless.real_seasons.fabric.common.RealSeasonsFabric"
+        ],
+        "client": [
+            "net.favouriteless.real_seasons.fabric.client.RealSeasonsClientFabric"
+        ]
+    },
+    "mixins": [
+      "real_seasons.mixins.json",
+      "real_seasons.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": ">=${fabric_api_version}",
+        "fabric": "*",
+        "minecraft": "${minecraft_version}",
+        "java": ">=21",
+        "forgeconfigapiport": ">=${forgeconfigapi_version}"
+    },
+    "accessWidener" : "real_seasons.accesswidener"
+}
+  
