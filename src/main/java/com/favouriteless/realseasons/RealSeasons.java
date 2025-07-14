@@ -30,10 +30,10 @@ public class RealSeasons {
     public static final RegistryObject<SingletonArgumentInfo<RealTimeArgument>> ARGUMENT_REALTIME = ARGUMENT_TYPES.register("real_time", () ->
             ArgumentTypeInfos.registerByClass(RealTimeArgument.class, SingletonArgumentInfo.contextFree(RealTimeArgument::arg)));
 
-    public RealSeasons() {
-        ARGUMENT_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public RealSeasons(FMLJavaModLoadingContext context) {
+        ARGUMENT_TYPES.register(context.getModEventBus());
 
-        ModLoadingContext.get().registerConfig(Type.SERVER, RealSeasonsConfig.SPEC);
+        context.registerConfig(Type.SERVER, RealSeasonsConfig.SPEC);
     }
 
 }
